@@ -96,22 +96,15 @@ The final plot will still display the learned decision boundary, as shown above,
 
 - The two-moons dataset is not linearly separable, meaning a straight line cannot cleanly separate the two classes. Therefore, the neural network creates a non-linear boundary and it is able to do that because the network contains multiple layers with tanh activation functions.
 
-- After 3 hidden layers , a sigmoid layer is used which acts as the output layer. The final layer uses:
+- After 3 hidden layers , a sigmoid layer is used which acts as the output layer. The final layer uses ``layers.Dense(1, activation="sigmoid")``. The sigmoid activation produces a value between 0 and 1, which can be interpreted as the model's estimated probability that a point belongs to one of the classes.
 
-``layers.Dense(1, activation="sigmoid")``
-
-The sigmoid activation produces a value between 0 and 1, which can be interpreted as the model's estimated probability that a point belongs to one of the classes.
-
-The decision boundary is drawn at:
-
-levels=[0.5]
+The decision boundary is drawn at: levels=[0.5]
 
 So points with predictions below approximately 0.5 fall on one side of the boundary, while points above 0.5 fall on the other.
 
 - The final visualization contains:
-
+  - Red and blue dots plotted as seen in the original dataset
   - Colored regions representing the model's predictions
   - A black line representing the 0.5 decision boundary
-  - The original training samples plotted on top
 
-This provides a visual representation of how the neural network separates the two classes.
+
