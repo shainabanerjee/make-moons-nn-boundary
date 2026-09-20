@@ -1,6 +1,6 @@
 # Neural Network Decision Boundary on Moons Dataset
 
-A small Python project that uses a neural network built with **Keras/TensorFlow** to learn and visualize a nonlinear decision boundary on the classic **two-moons dataset**.
+A Python project that uses a neural network built with Keras/TensorFlow to learn and visualize a nonlinear decision boundary on a two-moons dataset, obtained from scikit-learn (https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_moons.html).
 
 The project generates synthetic data, trains a small neural network to classify the two classes, and then visualizes the decision boundary learned by the model.
 
@@ -8,8 +8,8 @@ The project generates synthetic data, trains a small neural network to classify 
 
 The program produces two plots:
 
-1. **Training Data** — the generated two-moons dataset.
-2. **AI Decision Boundary** — the same data with the neural network's predicted decision regions and decision boundary.
+1. **Training Data** — the generated two-moons dataset
+2. **AI Decision Boundary** — the same data with an added decision boundary using neural network's predictions
 
 The decision boundary is the contour where the model's predicted probability is approximately `0.5`.
 
@@ -21,12 +21,7 @@ The dataset is generated using `make_moons` from scikit-learn:
 X, y = make_moons(n_samples=500, noise=0.3, random_state=0)
 ```
 
-This creates:
-
-* **500 samples**
-* **2 input features**
-* **2 classes**
-* Some random noise to make the classification problem less trivial
+This creates 500 samples with some random noise (0.3 - can be increased or decreased for experimenting) to make the classification problem less trivial.
 
 The neural network has the following architecture:
 
@@ -45,7 +40,7 @@ After training, the program evaluates the model across a grid of points covering
 
 ## Requirements
 
-* Python 3.9+
+* Python
 * NumPy
 * Matplotlib
 * scikit-learn
@@ -77,7 +72,7 @@ python draw_boundary.py
 
 The program will first display the generated training data.
 
-After closing that plot, the neural network will train for 200 epochs and then display the learned decision boundary.
+After closing that plot, the neural network will train for 200 epochs (can be modified for experimentation) and then display the learned decision boundary.
 
 ### Avoiding the First Plot
 
@@ -95,17 +90,17 @@ If you want the program to move directly to training without displaying the orig
 # plt.show()
 ```
 
-The final plot will still display the learned decision boundary.
+The final plot will still display the learned decision boundary, as shown below, showcasing decent success at segregating the red dots from blue dots and creating a non-linear boundary.
 
 <img width="640" height="480" alt="Figure_1" src="https://github.com/user-attachments/assets/6781225e-dbf7-4db6-9e88-39ca12cda632" />
 
-##Working Mechanism
+## Working Mechanism
 
-- The two-moons dataset is not linearly separable, meaning a straight line cannot cleanly separate the two classes. Therefore, the neural network can learn a nonlinear boundary because it contains multiple layers with tanh activation functions.
+- The two-moons dataset is not linearly separable, meaning a straight line cannot cleanly separate the two classes. Therefore, the neural network creates a non-linear boundary and it is able to do that because the network contains multiple layers with tanh activation functions.
 
-- After 3 hidden layers (tanh), a sigmoid layer is used which acts as the output layer. The final layer uses:
+- After 3 hidden layers , a sigmoid layer is used which acts as the output layer. The final layer uses:
 
-layers.Dense(1, activation="sigmoid")
+``layers.Dense(1, activation="sigmoid")``
 
 The sigmoid activation produces a value between 0 and 1, which can be interpreted as the model's estimated probability that a point belongs to one of the classes.
 
