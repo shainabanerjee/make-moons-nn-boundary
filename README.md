@@ -97,6 +97,8 @@ If you want the program to move directly to training without displaying the orig
 
 The final plot will still display the learned decision boundary.
 
+<img width="640" height="480" alt="Figure_1" src="https://github.com/user-attachments/assets/6781225e-dbf7-4db6-9e88-39ca12cda632" />
+
 ##Working Mechanism
 
 - The two-moons dataset is not linearly separable, meaning a straight line cannot cleanly separate the two classes. Therefore, the neural network can learn a nonlinear boundary because it contains multiple layers with tanh activation functions.
