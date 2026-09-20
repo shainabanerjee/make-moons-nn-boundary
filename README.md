@@ -6,6 +6,8 @@ The project generates synthetic data, trains a small neural network to classify 
 
 ## Demo
 
+<img width="640" height="480" alt="Figure_1" src="https://github.com/user-attachments/assets/6781225e-dbf7-4db6-9e88-39ca12cda632" />
+
 The program produces two plots:
 
 1. **Training Data** — the generated two-moons dataset
@@ -82,17 +84,13 @@ The code contains:
 plt.show()
 ```
 
-after the training-data plot.
-
 If you want the program to move directly to training without displaying the original dataset first, comment out the following line using a preceding '#':
 
 ```python
 # plt.show()
 ```
 
-The final plot will still display the learned decision boundary, as shown below, showcasing decent success at segregating the red dots from blue dots and creating a non-linear boundary.
-
-<img width="640" height="480" alt="Figure_1" src="https://github.com/user-attachments/assets/6781225e-dbf7-4db6-9e88-39ca12cda632" />
+The final plot will still display the learned decision boundary, as shown above, showcasing decent success at segregating the red dots from blue dots and creating a non-linear boundary.
 
 ## Working Mechanism
 
